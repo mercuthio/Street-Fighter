@@ -31,10 +31,7 @@ Animacion::Animacion(float tiempoCambio_) {
 	fila = 0;
 	accion = 0;
 	tiempoCambio = tiempoCambio_;
-	tiempoTotal = 0.0f;
-
-	uvRect.width = 43;
-	uvRect.height = 90;
+	tiempoTotal = 0.0f
 
 }
 
@@ -59,9 +56,14 @@ void Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 		}
 
 	}
-	cout << imagenActual << endl;
-	uvRect.left = imagenActual * uvRect.width;
-	uvRect.top = fila * uvRect.height + 15;
+	switch (accion) {
+	default:
+		uvRect.width = 49;
+		uvRect.height = 90;
+		uvRect.left = imagenActual * uvRect.width + 1;
+		uvRect.top = fila * uvRect.height + 15;
+		break;
+	}
 
 }
 

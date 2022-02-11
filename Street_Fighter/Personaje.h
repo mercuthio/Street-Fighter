@@ -53,13 +53,13 @@ void Personaje::actualizar(float tiempo) {
 
 	if (Keyboard::isKeyPressed(Keyboard::A) && (pos_x - 750 * tiempo) > 0) {
 
-		pos_x -= 750 * tiempo;
+		pos_x -= 1000 * tiempo;
 		fila = 0;
 		sprite = 1;
 
 	} else if (Keyboard::isKeyPressed(Keyboard::D) && (pos_x + 750 * tiempo) < 825){
 
-		pos_x += 750 * tiempo;
+		pos_x += 1000 * tiempo;
 		fila = 0;
 		sprite = 1;
 

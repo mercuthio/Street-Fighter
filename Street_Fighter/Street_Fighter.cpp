@@ -18,7 +18,7 @@ int main()
 
     Texture texturaRyu;
     texturaRyu.loadFromFile("Sprites/Personajes/Ryu.png");
-    Personaje personaje(&texturaRyu,20,0.05f,spritesRyu);
+    Personaje personaje(&texturaRyu,20,0.035f,spritesRyu);
 
     Texture texturaEsc1;
     texturaEsc1.loadFromFile("Sprites/Escenarios/Sagat.png");
@@ -42,7 +42,7 @@ int main()
         personaje.actualizar(0.005f);
 
         window.clear();
-        escenario.dibujar(window);
+        //escenario.dibujar(window);
         personaje.dibujar(window);
         window.display();
     }
