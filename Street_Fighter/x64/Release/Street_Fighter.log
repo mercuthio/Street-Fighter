@@ -1,0 +1,14 @@
+﻿  Street_Fighter.cpp
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(23,5): error C2065: 'Personaje': identificador no declarado
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(23,15): error C2146: error de sintaxis: falta ';' delante del identificador 'personaje'
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(23,15): error C3861: 'personaje': no se encontró el identificador
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(40,9): error C2065: 'personaje': identificador no declarado
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(43,9): error C2065: 'personaje': identificador no declarado
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(9,5): error C2374: 'ANCHO_PANTALLA': nueva definición; inicialización múltiple
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(9): message : vea la declaración de 'ANCHO_PANTALLA'
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(10,5): error C2374: 'ALTO_PANTALLA': nueva definición; inicialización múltiple
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(10): message : vea la declaración de 'ALTO_PANTALLA'
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(12,5): error C2374: 'spritesRyu': nueva definición; inicialización múltiple
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(12): message : vea la declaración de 'spritesRyu'
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(14,5): error C2084: la función 'int main(void)' ya tiene un cuerpo
+D:\Users\HOME\Desktop\Videojuegos-main\Street_Fighter\Street_Fighter.cpp(14): message : vea la definición anterior de 'main'
