@@ -37,7 +37,7 @@ Animacion::Animacion(float tiempoCambio_) {
 
 bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo, float &pos_y, float& pos_x) {
 
-	bool enSuelo = (accion != 9) && (accion != 16);
+	bool terminada = (accion != 9 && accion != 16 && fila == 0);
 
 	tiempoTotal += tiempo;
 
@@ -80,9 +80,9 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 
 			if (imagenActual >= spriteFinal) {
 
-				if ((accion == 9) || (accion == 16)) { //Termina animacion de salto
+				if ((accion == 9) || (accion == 16) || (fila != 0)) { //Termina animacion no parable
 					pos_y = 300;
-					enSuelo = true;
+					terminada = true;
 				}
 
 				imagenActual = accion;
@@ -92,7 +92,7 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 
 	uvRect.width = 49;
 	uvRect.height = 90;
-
+	cout << accion << endl;
 	switch (fila) {
 	case 0: //Primera fila
 		switch (accion) {
@@ -119,18 +119,22 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 
 	case 1: //Segunda fila
 		switch (accion) {
-		case 1: //Puñetazo largo
-			uvRect.left = imagenActual * uvRect.width + 32; 
+		case 8: //Puñetazo arriba
+			uvRect.left = imagenActual * uvRect.width + 19;
+			uvRect.top = fila * uvRect.height + 41;
+			break;
+		case 3: //Puñetazo largo
+			uvRect.left = imagenActual * uvRect.width + 21; 
 			uvRect.top = fila * uvRect.height + 41;
 			break;
 		default: //Puñetazo corto
-			uvRect.left = imagenActual * uvRect.width + 3;
+			uvRect.left = imagenActual * uvRect.width - 2;
 			uvRect.top = fila * uvRect.height + 41;
 			break;
 		}
 		break;
 	}
-	return enSuelo;
+	return terminada;
 
 }
 

@@ -21,7 +21,7 @@ public:
 
 private:
 
-	bool enSuelo;
+	bool terminada;
 	int vida;
 	int fila;
 	int sprite;
@@ -39,7 +39,7 @@ Personaje::Personaje(Texture* textura, float pos_x_, float pos_y_, float tiempoC
 	sprite = 0;
 	pos_x = pos_x_;
 	pos_y = pos_y_;
-	enSuelo = true;
+	terminada = true;
 
 	for (int i = 0; i < 15 && numSprites[i][0] != '\0'; i++) {
 		for (int j = 0; j < 15 && numSprites_[i][j] != '\0'; j++) {
@@ -59,7 +59,7 @@ void Personaje::actualizar(float tiempo) {
 
 	cuerpo.setSize(Vector2f(100.0f, 150.0f));
 
-	if (enSuelo) {
+	if (terminada) {
 
 		if (Keyboard::isKeyPressed(Keyboard::D) && (pos_x + 750 * tiempo) < 825) { //Mover derecha
 
@@ -83,6 +83,11 @@ void Personaje::actualizar(float tiempo) {
 			
 			fila = 0;
 			sprite = 2;
+
+			if (Keyboard::isKeyPressed(Keyboard::E)) { //Puñetazo hacia arriba
+				fila = 1;
+				sprite = 2;
+			}
 
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::S)) { //Agacharse
@@ -123,10 +128,11 @@ void Personaje::actualizar(float tiempo) {
 
 		}
 	}
+
 	if (sprite > 0) {
-		enSuelo = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x);
+		terminada = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x);
 	}else{
-		enSuelo = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x);
+		terminada = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x);
 	}
 
 	cuerpo.setTextureRect(animacion.uvRect);
