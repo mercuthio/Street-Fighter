@@ -11,7 +11,7 @@ public:
 
 	Animacion(float);
 	~Animacion() = default;
-	bool actualizar(int, int, int, float, float&, float&);
+	bool actualizar(int, int, int, float, float&, float&, RectangleShape&);
 
 	IntRect uvRect;
 
@@ -35,7 +35,7 @@ Animacion::Animacion(float tiempoCambio_) {
 
 }
 
-bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo, float &pos_y, float& pos_x) {
+bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo, float &pos_y, float& pos_x, RectangleShape& cuerpo) {
 
 	bool terminada = (accion != 9 && accion != 16 && fila == 0);
 
@@ -92,7 +92,9 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 
 	uvRect.width = 49;
 	uvRect.height = 90;
-	cout << accion << endl;
+	cuerpo.setSize(Vector2f(86.0f, 162.0f));
+	//cout << accion << endl;
+	cout << imagenActual << endl;
 	switch (fila) {
 	case 0: //Primera fila
 		switch (accion) {
@@ -105,11 +107,13 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 			case 16: //Salto hacia delante
 				cout << imagenActual << endl;
 				if (imagenActual == 18) {
+					cuerpo.setSize(Vector2f(172.0f, 162.0f));
 					uvRect.width = 98;
 					uvRect.height = 90;
 					uvRect.left = imagenActual * 49 + 1;
 					uvRect.top = fila * uvRect.height + 15;
 				} else if (imagenActual == 20) {
+					cuerpo.setSize(Vector2f(172.0f, 162.0f));
 					uvRect.width = 98;
 					uvRect.height = 90;
 					uvRect.left = imagenActual * 49 + 43 + 1;
@@ -145,16 +149,70 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 	case 1: //Segunda fila
 		switch (accion) {
 		case 8: //Puñetazo arriba
-			uvRect.left = imagenActual * uvRect.width + 19;
-			uvRect.top = fila * uvRect.height + 41;
+			if (imagenActual == 9) {
+				cuerpo.setSize(Vector2f(94.0f, 162.0f));
+				uvRect.width = 53;
+				uvRect.height = 90;
+				uvRect.left = imagenActual * 49 + 14 + 8 + 29 + 8 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else if (imagenActual == 10) {
+				uvRect.left = imagenActual * 49 + 14 + 8 + 29 + 8 + 4 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else {
+				uvRect.left = imagenActual * 49 + 14 + 8 + 29 + 8 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
 			break;
 		case 3: //Puñetazo largo
-			uvRect.left = imagenActual * uvRect.width + 21; 
-			uvRect.top = fila * uvRect.height + 41;
+			if (imagenActual == 4) {
+				cuerpo.setSize(Vector2f(102.0f, 162.0f));
+				uvRect.width = 57;
+				uvRect.height = 90;
+				uvRect.left = imagenActual * 49 + 14 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else if (imagenActual == 5) {
+				cuerpo.setSize(Vector2f(144.0f, 162.0f));
+				uvRect.width = 78;
+				uvRect.height = 90;
+				uvRect.left = imagenActual * 49 + 14 + 8 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else if (imagenActual == 6) {
+				cuerpo.setSize(Vector2f(102.0f, 162.0f));
+				uvRect.width = 57;
+				uvRect.height = 90;
+				uvRect.left = imagenActual * 49 + 14 + 8 + 29 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else if (imagenActual == 7) {
+				uvRect.left = imagenActual * 49 + 14 + 8 + 29 + 8 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else {
+				uvRect.left = imagenActual * uvRect.width + 14 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
 			break;
 		default: //Puñetazo corto
-			uvRect.left = imagenActual * uvRect.width - 2;
-			uvRect.top = fila * uvRect.height + 41;
+			if (imagenActual == 1) {
+				cuerpo.setSize(Vector2f(114.0f, 162.0f));
+				uvRect.width = 65;
+				uvRect.height = 90;
+				uvRect.left = imagenActual * 49 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else if (imagenActual == 2) {
+				uvRect.left = imagenActual * uvRect.width + 14 + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+			else {
+				uvRect.left = imagenActual * uvRect.width + 1;
+				uvRect.top = fila * uvRect.height + 41;
+			}
+
 			break;
 		}
 		break;

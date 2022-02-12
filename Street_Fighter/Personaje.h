@@ -47,7 +47,7 @@ Personaje::Personaje(Texture* textura, float pos_x_, float pos_y_, float tiempoC
 		}
 	}
 
-	cuerpo.setSize(Vector2f(100.0f, 150.0f));
+	cuerpo.setSize(Vector2f(86.0f, 162.0f));
 	cuerpo.setPosition(pos_x, pos_y);
 	cuerpo.setTexture(textura);
 
@@ -128,9 +128,9 @@ void Personaje::actualizar(float tiempo) {
 	}
 
 	if (sprite > 0) {
-		terminada = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x);
+		terminada = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x, cuerpo);
 	}else{
-		terminada = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x);
+		terminada = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x, cuerpo);
 	}
 
 	cuerpo.setTextureRect(animacion.uvRect);
