@@ -63,14 +63,18 @@ void Personaje::actualizar(float tiempo) {
 
 		if (Keyboard::isKeyPressed(Keyboard::D) && (pos_x + 750 * tiempo) < 825) { //Mover derecha
 
-			pos_x += 750 * tiempo;
 			fila = 0;
 
 			if (Keyboard::isKeyPressed(Keyboard::W)) { //Salto hacia delante
+				pos_x += 750 * tiempo;
 				sprite = 3;
 
-			}
-			else { 
+			}else if (Keyboard::isKeyPressed(Keyboard::E)) {
+				fila = 1;
+				sprite = 1;
+
+			}else {
+				pos_x += 750 * tiempo;
 				sprite = 1;
 
 			}
@@ -100,6 +104,11 @@ void Personaje::actualizar(float tiempo) {
 			fila = 0;
 			sprite = 1;
 
+		}else if (Keyboard::isKeyPressed(Keyboard::E)) { //Puñetazo corto
+
+			fila = 1;
+			sprite = 0;
+
 		}
 		else {
 
@@ -114,8 +123,12 @@ void Personaje::actualizar(float tiempo) {
 
 		}
 	}
+	if (sprite > 0) {
+		enSuelo = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x);
+	}else{
+		enSuelo = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x);
+	}
 
-	enSuelo = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x);
 	cuerpo.setTextureRect(animacion.uvRect);
 	cuerpo.setPosition(pos_x, pos_y);
 	cuerpo.setScale(1.75, 1.75);

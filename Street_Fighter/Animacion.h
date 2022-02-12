@@ -89,30 +89,47 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 			}
 		}
 	}
-	
-	switch (accion) {
-	/*case 9: //Salto
 
-		break;
-	case 16: //Salto hacia delante
+	uvRect.width = 49;
+	uvRect.height = 90;
 
-		break;*/
-	case 23: //Agacharse
-		uvRect.left = imagenActual * uvRect.width+30;
-		uvRect.top = fila * uvRect.height + 15;
+	switch (fila) {
+	case 0: //Primera fila
+		switch (accion) {
+			/*case 9: //Salto
+
+				break;
+			case 16: //Salto hacia delante
+
+				break;*/
+		case 23: //Agacharse
+			uvRect.left = imagenActual * uvRect.width + 30;
+			uvRect.top = fila * uvRect.height + 15;
+			break;
+		case 25: //Bloquear agachado
+			uvRect.left = imagenActual * uvRect.width + 32;
+			uvRect.top = fila * uvRect.height + 15;
+			break;
+		default:
+			uvRect.left = imagenActual * uvRect.width + 1;
+			uvRect.top = fila * uvRect.height + 15;
+			break;
+		}
 		break;
-	case 25: //Bloquear agachado
-		uvRect.left = imagenActual * uvRect.width+32;
-		uvRect.top = fila * uvRect.height + 15;
-		break;
-	default:
-		uvRect.width = 49;
-		uvRect.height = 90;
-		uvRect.left = imagenActual * uvRect.width + 1;
-		uvRect.top = fila * uvRect.height + 15;
+
+	case 1: //Segunda fila
+		switch (accion) {
+		case 1: //Puñetazo largo
+			uvRect.left = imagenActual * uvRect.width + 32; 
+			uvRect.top = fila * uvRect.height + 41;
+			break;
+		default: //Puñetazo corto
+			uvRect.left = imagenActual * uvRect.width + 3;
+			uvRect.top = fila * uvRect.height + 41;
+			break;
+		}
 		break;
 	}
-
 	return enSuelo;
 
 }
