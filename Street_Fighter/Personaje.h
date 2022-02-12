@@ -57,8 +57,6 @@ Personaje::Personaje(Texture* textura, float pos_x_, float pos_y_, float tiempoC
 
 void Personaje::actualizar(float tiempo) {
 
-	cuerpo.setSize(Vector2f(100.0f, 150.0f));
-
 	if (terminada) {
 
 		if (Keyboard::isKeyPressed(Keyboard::D) && (pos_x + 750 * tiempo) < 825) { //Mover derecha

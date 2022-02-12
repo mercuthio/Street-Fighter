@@ -74,7 +74,7 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 	if (tiempoTotal >= tiempoCambio) {
 		tiempoTotal -= tiempoCambio;
 
-		if ((accion != 23 && accion != 25)) { //Agachado no debe reiniciar animacion			
+		if ((accion != 24 && accion != 26)) { //Agachado no debe reiniciar animacion			
 
 			imagenActual++;
 
@@ -96,18 +96,43 @@ bool Animacion::actualizar(int fila_, int accion_, int spriteFinal, float tiempo
 	switch (fila) {
 	case 0: //Primera fila
 		switch (accion) {
-			/*case 9: //Salto
-
+			case 9: //Salto
+				uvRect.width = 49;
+				uvRect.height = 100;
+				uvRect.left = imagenActual * uvRect.width + 1;
+				uvRect.top = fila * uvRect.height + 5;
 				break;
 			case 16: //Salto hacia delante
-
-				break;*/
-		case 23: //Agacharse
-			uvRect.left = imagenActual * uvRect.width + 30;
+				cout << imagenActual << endl;
+				if (imagenActual == 18) {
+					uvRect.width = 98;
+					uvRect.height = 90;
+					uvRect.left = imagenActual * 49 + 1;
+					uvRect.top = fila * uvRect.height + 15;
+				} else if (imagenActual == 20) {
+					uvRect.width = 98;
+					uvRect.height = 90;
+					uvRect.left = imagenActual * 49 + 43 + 1;
+					uvRect.top = fila * uvRect.height + 15;
+				} else {
+					uvRect.width = 49;
+					uvRect.height = 100;
+					uvRect.top = fila * uvRect.height + 5;
+					if (imagenActual < 18) {
+						uvRect.left = imagenActual * uvRect.width + 1;
+					} else if (imagenActual == 19) {
+						uvRect.left = imagenActual * uvRect.width + 43 + 1;
+					} else {
+						uvRect.left = imagenActual * 49 + 86 + 1;
+					}
+				}
+				break;
+		case 24: //Agacharse
+			uvRect.left = imagenActual * uvRect.width + 86 + 1;
 			uvRect.top = fila * uvRect.height + 15;
 			break;
-		case 25: //Bloquear agachado
-			uvRect.left = imagenActual * uvRect.width + 32;
+		case 26: //Bloquear agachado
+			uvRect.left = imagenActual * uvRect.width + 86 + 1;
 			uvRect.top = fila * uvRect.height + 15;
 			break;
 		default:

@@ -10,7 +10,7 @@ using namespace std;
 int ANCHO_PANTALLA = 1000;
 int ALTO_PANTALLA = 600;
 
-int spritesRyu[8][15] = { {4,9,16,23,25,27},{3,8,11,18,23} };
+int spritesRyu[8][15] = { {4,9,16,24,26,27},{3,8,11,18,23} };
 
 int main()
 {
