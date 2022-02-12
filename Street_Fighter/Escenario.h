@@ -22,7 +22,7 @@ private:
 
 };
 
-Escenario::Escenario(Texture* textura){
+Escenario::Escenario(Texture* textura) {
 
 	uvRect.width = 464;
 	uvRect.height = 200;

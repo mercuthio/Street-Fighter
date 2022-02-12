@@ -18,7 +18,7 @@ int main()
 
     Texture texturaRyu;
     texturaRyu.loadFromFile("Sprites/Personajes/Ryu.png");
-    Personaje personaje(&texturaRyu,20,0.035f,spritesRyu);
+    Personaje personaje(&texturaRyu,20,300,0.035f,spritesRyu);
 
     Texture texturaEsc1;
     texturaEsc1.loadFromFile("Sprites/Escenarios/Sagat.png");

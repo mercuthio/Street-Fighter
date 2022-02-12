@@ -1,3 +1,2 @@
 ﻿  Street_Fighter.cpp
-D:\Users\HOME\Desktop\StreetFighter\Street_Fighter\Animacion.h(36,1): error C2143: error de sintaxis: falta ';' delante de '}'
-D:\Users\HOME\Desktop\StreetFighter\Street_Fighter\Animacion.h(66,2): warning C4065: la instrucción switch contiene etiquetas 'default' pero no etiquetas 'case'
+  Street_Fighter.vcxproj -> C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\x64\Debug\Street_Fighter.exe
