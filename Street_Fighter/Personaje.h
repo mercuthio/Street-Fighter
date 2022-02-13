@@ -22,6 +22,7 @@ public:
 private:
 
 	bool terminada;
+	bool sentido;
 	int vida;
 	int fila;
 	int sprite;
@@ -55,9 +56,20 @@ Personaje::Personaje(Texture* textura, float pos_x_, float pos_y_, float tiempoC
 
 }
 
+//MAPEO DE MANDO A TECLADO (JUGADOR 1)
+
+//	Y	=	T	-	L.Punch
+//	X	=	Y	-	M.Punch
+//	L	=	U	-	H.Punch
+//	B	=	G	-	L.Kick
+//	A	=	H	-	M.Kick
+//	R	=	J	-	H.Kick
+
 void Personaje::actualizar(float tiempo) {
 
 	if (terminada) {
+
+		sentido = true;
 
 		if (Keyboard::isKeyPressed(Keyboard::D) && (pos_x + 750 * tiempo) < 825) { //Mover derecha
 
@@ -67,29 +79,38 @@ void Personaje::actualizar(float tiempo) {
 				pos_x += 750 * tiempo;
 				sprite = 3;
 
-			}else if (Keyboard::isKeyPressed(Keyboard::E)) {
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::T)) { //Forward L.Punch
 				fila = 1;
-				sprite = 1;
-
-			}else {
+				sprite = 2;
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::Y)) { //Forward M.Punch
+				fila = 1;
+				sprite = 3;
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::U)) { //Forward H.Punch
+				fila = 1;
+				sprite = 4;
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::G)) { //Forward L.Kick
+				fila = 2;
+				sprite = 2;
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::H)) { //Forward M.Kick
+				fila = 2;
+				sprite = 3;
+			}
+			else if (Keyboard::isKeyPressed(Keyboard::J)) { //Forward H.Kick
+				fila = 2;
+				sprite = 4;
+			}
+			else {
 				pos_x += 750 * tiempo;
 				sprite = 1;
 
 			}
 		}
-		else if (Keyboard::isKeyPressed(Keyboard::W)) { //Salto
-			
-			fila = 0;
-			sprite = 2;
-
-			if (Keyboard::isKeyPressed(Keyboard::E)) { //Puñetazo hacia arriba
-				fila = 1;
-				sprite = 2;
-			}
-
-		}
 		else if (Keyboard::isKeyPressed(Keyboard::S)) { //Agacharse
-
 			fila = 0;
 
 			if (Keyboard::isKeyPressed(Keyboard::A)) { //Bloquear agachado
@@ -102,25 +123,50 @@ void Personaje::actualizar(float tiempo) {
 
 		}
 		else if (Keyboard::isKeyPressed(Keyboard::A) && (pos_x - 750 * tiempo) > 0) { //Mover izquierda
-
 			pos_x -= 750 * tiempo;
 			fila = 0;
-			sprite = 1;
 
-		}else if (Keyboard::isKeyPressed(Keyboard::E)) { //Puñetazo corto
+			if (Keyboard::isKeyPressed(Keyboard::W)) { //Salto hacia atras
+				sprite = 3;
+				sentido = false;
 
+			}
+			else {
+				sprite = 1;
+			}
+
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::W)) { //Salto
+			fila = 0;
+			sprite = 2;
+
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::T)) { //L.Punch
 			fila = 1;
 			sprite = 0;
 
 		}
-		else {
+		else if (Keyboard::isKeyPressed(Keyboard::Y) || Keyboard::isKeyPressed(Keyboard::U)) { //M.Punch, H.Punch
+			fila = 1;
+			sprite = 1;
 
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::G) || Keyboard::isKeyPressed(Keyboard::H)) { //L.Kick, M.Kick
+			fila = 2;
+			sprite = 0;
+
+		}
+		else if (Keyboard::isKeyPressed(Keyboard::J)) { //H.Kick
+			fila = 2;
+			sprite = 1;
+
+		}
+		else { //Quieto
 			fila = 0;
 			sprite = 0;
 		}
 
 		if (pos_x == 0.0f) {
-
 			fila = 0;
 			sprite = 0;
 
@@ -128,9 +174,10 @@ void Personaje::actualizar(float tiempo) {
 	}
 
 	if (sprite > 0) {
-		terminada = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x, cuerpo);
-	}else{
-		terminada = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x, cuerpo);
+		terminada = animacion.actualizar(fila, numSprites[fila][sprite - 1], numSprites[fila][sprite], tiempo, pos_y, pos_x, sentido, cuerpo);
+	}
+	else {
+		terminada = animacion.actualizar(fila, 0, numSprites[fila][sprite], tiempo, pos_y, pos_x, sentido, cuerpo);
 	}
 
 	cuerpo.setTextureRect(animacion.uvRect);
