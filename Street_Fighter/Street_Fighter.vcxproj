@@ -152,6 +152,8 @@
   <ItemGroup>
     <ClInclude Include="Animacion.h" />
     <ClInclude Include="Escenario.h" />
+    <ClInclude Include="Inicio.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Personaje.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>

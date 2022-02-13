@@ -1,3 +1,164 @@
 ﻿  Street_Fighter.cpp
-  LINK : no se encontró C:\Users\adria\Source\Repos\Videojuegos\x64\Debug\Street_Fighter.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  Street_Fighter.vcxproj -> C:\Users\adria\Source\Repos\Videojuegos\x64\Debug\Street_Fighter.exe
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Inicio.h(64,61): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Inicio.h(64,41): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Inicio.h(67,75): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Inicio.h(67,47): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(99,61): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(99,41): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(102,107): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(102,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(105,107): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(105,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(108,107): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(108,50): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(113,112): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(113,54): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(116,112): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(116,54): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(119,112): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\Street_Fighter\Menu.h(119,54): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  Street_Fighter.vcxproj -> C:\Users\adria\OneDrive\Escritorio\Tercero\1-Videojuegos\Practicas\Proyecto\x64\Debug\Street_Fighter.exe
